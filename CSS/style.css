@@ -1,3 +1,11 @@
 .name-text h1 {
-    background-color: aqua;
+  color: aqua;
+}
+
+.img {
+  width: 100%;
+  height: auto;
+}
+
+.mid {
 }
