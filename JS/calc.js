@@ -3,25 +3,31 @@
 //income
 
 var newBalance = 0;
-
+const failError = document.getElementById("notify-fail");
 document.getElementById("calculate-btn").addEventListener("click", function () {
   const depositInput = document.getElementById("incomeValue").value;
   const foodInput = document.getElementById("foodCost").value;
   const rentInput = document.getElementById("rentCost").value;
   const clothesInput = document.getElementById("clothesCost").value;
   // total expenses
-  const outPut =
-    parseInt(foodInput) + parseInt(rentInput) + parseInt(clothesInput);
+  if (depositInput < 0 || foodInput < 0 || rentInput < 0 || clothesInput < 0) {
+    failError.style.display = "block";
+  } else {
+    failError.style.display = "none";
+    const outPut =
+      parseInt(foodInput) + parseInt(rentInput) + parseInt(clothesInput);
 
-  //   console.log(outPut);
+    //   console.log(outPut);
 
-  const totalExpenses = document.getElementById("total-expenses");
+    const totalExpenses = document.getElementById("total-expenses");
 
-  totalExpenses.innerText = outPut;
-  // remaining balance
-  const remainigBalance = document.getElementById("remaining-balance");
-  newBalance = parseInt(depositInput) - parseInt(outPut);
-  remainigBalance.innerText = newBalance;
+    totalExpenses.innerText = outPut;
+
+    // remaining balance
+    const remainigBalance = document.getElementById("remaining-balance");
+    newBalance = parseInt(depositInput) - parseInt(outPut);
+    remainigBalance.innerText = newBalance;
+  }
 });
 
 //Savings Part

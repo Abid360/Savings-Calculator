@@ -10,3 +10,7 @@
 .center {
   text-align: center;
 }
+.notify {
+  display: none;
+  text-align: center;
+}
