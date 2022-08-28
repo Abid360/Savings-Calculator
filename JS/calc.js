@@ -1,6 +1,9 @@
 // handle income and expence
 
 //income
+
+var newBalance = 0;
+
 document.getElementById("calculate-btn").addEventListener("click", function () {
   const depositInput = document.getElementById("incomeValue").value;
   const foodInput = document.getElementById("foodCost").value;
@@ -17,17 +20,23 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
   totalExpenses.innerText = outPut;
   // remaining balance
   const remainigBalance = document.getElementById("remaining-balance");
-  const newBalance = parseInt(depositInput) - parseInt(outPut);
+  newBalance = parseInt(depositInput) - parseInt(outPut);
   remainigBalance.innerText = newBalance;
-
-  //   console.log(newBalance);
 });
 
 //Savings Part
+function calculateDiscount(price, discount) {
+  return price * (discount / 100);
+}
 
 document.getElementById("save-btn").addEventListener("click", function () {
-  const savingInput = document.getElementById("savingPercent").value;
+  const savingInput = document.getElementById("savingPercent").value; //input filed entered value getting here.
+  var savingAmount = calculateDiscount(newBalance, savingInput);
+  const finalSaving = document.getElementById("final-saving");
+  finalSaving.innerText = savingAmount;
 
-  const totalSave = remainigBalance / parseInt(savingInput);
-  //   console.log(totalSave);
+  const remainigBalance2 = document.getElementById("remaining-balance2");
+  const Final = newBalance - savingAmount;
+  remainigBalance2.innerText = Final;
+  console.log(remainigBalance2);
 });
