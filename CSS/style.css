@@ -1,15 +1,20 @@
+/* heading colour */
+
 .name-text h1 {
   color: aqua;
 }
-
+/* #image adjustment */
 .img {
   width: 100%;
   height: auto;
 }
 
+/* text alignment */
 .center {
   text-align: center;
 }
+
+/* showing error msg */
 .notify {
   display: none;
   text-align: center;

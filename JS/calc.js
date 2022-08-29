@@ -1,7 +1,5 @@
 // handle income and expence
 
-//income
-
 var newBalance = 0;
 const failError = document.getElementById("notify-fail");
 document.getElementById("calculate-btn").addEventListener("click", function () {
@@ -30,11 +28,12 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
   }
 });
 
-//Savings Part
+//function for Savings Part
 function calculateDiscount(price, discount) {
   return price * (discount / 100);
 }
 
+// saving js part
 document.getElementById("save-btn").addEventListener("click", function () {
   const savingInput = document.getElementById("savingPercent").value; //input filed entered value getting here.
   var savingAmount = calculateDiscount(newBalance, savingInput);
